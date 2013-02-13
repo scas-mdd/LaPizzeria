@@ -43,12 +43,15 @@ public class CustomerServiceImpl implements CustomerService{
 	@Transactional
 	public void delete(Customer customer) {
 		// TODO Auto-generated method stub
-		
+		log.info("Deleting customer.");
+		em.remove(customer);
 	}
 	@Transactional
 	public Customer saveOrUpdate(Customer customer) {
 		// TODO Auto-generated method stub
-		return null;
+		log.info("Added customer.");
+		em.persist(customer);
+		return customer;
 	}
 
 }
